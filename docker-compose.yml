@@ -2,26 +2,24 @@ version: '3.0'
 
 services:
   frontend:
-    build: ./frontend
+    # Replace with your image
+    image: ghcr.io/tengfone-govtech/bootcamp-gds-frontend:7541c38cad701ed8c89fc963a3d080bba1d8d489
     command: "npm start"
     environment:
       NODE_ENV: development
       APP_URL: http://localhost:3000
       API_URL: http://backend:3001
-    volumes:
-      - ./frontend/src:/home/node/app/src
     ports:
       - 3000:3000
   
   backend:
-    build: ./backend
+    # Replace with your image
+    image: ghcr.io/tengfone-govtech/bootcamp-gds-backend:7541c38cad701ed8c89fc963a3d080bba1d8d489
     command: "npm start"
     environment:
       NODE_ENV: development
       APP_URL: http://localhost:3000
       API_URL: http://localhost:3001
       PORT: 3001
-    volumes:
-      - ./backend/src:/home/node/app/src
     ports:
       - 3001:3001
